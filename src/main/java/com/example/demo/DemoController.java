@@ -11,7 +11,7 @@ public class DemoController {
   @GetMapping(path="/demo", produces = "text/html")
   public ModelAndView getDemo() {
     if (true) {
-      throw new RuntimeException("Demo Exception");
+      throw new ForbiddenException("Demo Authorization-Related Exception");
     }
     return new ModelAndView("demo");
   }
