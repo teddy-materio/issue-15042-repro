@@ -11,6 +11,9 @@ public class DemoController {
   @GetMapping(path="/demo", produces = "text/html")
   public ModelAndView getDemo() {
     if (true) {
+      // To trigger the bug:
+      // For unauthenticated requests, this exception must ultimately cause an HTTP 401 or 403 response
+      // For authenticated requests: this can be ANY exception
       throw new ForbiddenException("Demo Authorization-Related Exception");
     }
     return new ModelAndView("demo");
