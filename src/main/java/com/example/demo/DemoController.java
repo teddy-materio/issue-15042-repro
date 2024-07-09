@@ -14,7 +14,7 @@ public class DemoController {
       // To trigger the bug:
       // For unauthenticated requests, this exception must cause an HTTP 401 or 403 response
       // For authenticated requests, this can be any exception
-      throw new ForbiddenException("Demo Authorization-Related Exception");
+      throw new ForbiddenException("This exception will trigger the bug");
     }
     return new ModelAndView("demo");
   }
